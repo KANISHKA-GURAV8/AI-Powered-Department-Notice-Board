@@ -74,10 +74,11 @@ app.add_url_rule("/files/<path:filename>", "files",
 # -----------------------
 
 db_config = {
-    "host": "localhost",
-    "user": "root",
-    "password": os.getenv("PASSWORD"),
-    "database": "college_notices1",   # ✅ your single database
+    "host": os.getenv("MYSQLHOST"),
+    "user": os.getenv("MYSQLUSER"),
+    "password": os.getenv("MYSQLPASSWORD"),
+    "database": os.getenv("MYSQLDATABASE"),
+    "port": int(os.getenv("MYSQLPORT")),
     "auth_plugin": "mysql_native_password",
 }
 
